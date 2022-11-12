@@ -11,7 +11,7 @@ PhoneBook = {
 }
 
 while True:
-    Choice = int(input("\nMenu: \n\t1 -> Add an item \n\t2 -> Search \n\t3 -> Exit (y/n) \nWhat do you want to do? (1-3): "))
+    Choice = int(input("\nMenu: \n\t1 -> Add an item \n\t2 -> Search \n\t3 -> All Contacts \n\t4 -> Exit (y/n) \nWhat do you want to do? (1-4): "))
     if Choice == 1:
         FullName = input("Enter your full name: ")
         Age = input("Enter your age: ")
@@ -29,7 +29,7 @@ while True:
 
     if Choice == 2:
         SearchName = input("Enter the full name of the contact: ")
-        print("\n===================================== Phone Book =====================================")
+        print("\n======================================= Phone Book =======================================")
         print(f'{"Name": <33} {"Age": <10} {"Address": <33} {"Number": <15}')
         Matches = 0
         for key in PhoneBook:
@@ -40,6 +40,14 @@ while True:
             print(f'\n{"*** No match found ***": ^86}')
 
     if Choice == 3:
+        print("\n======================================= Phone Book =======================================")
+        print(f'{"Name": <33} {"Age": <10} {"Address": <33} {"Number": <15}')
+
+        for key in PhoneBook:
+            print(f'{key.capitalize(): <33} {PhoneBook[key][0]: <10} {PhoneBook[key][1].capitalize(): <33} {PhoneBook[key][2]: <15}')
+        print("==========================================================================================")
+
+    if Choice == 4:
         Exit = input("Do you want to exit? y/n: ")
         if Exit == "y":
             print("\n** Program Terminated **")
