@@ -27,18 +27,17 @@ while True:
         PhoneBook[FullName] = DataList
         print("Contact added.")
 
-        # For testing.
-        for key in PhoneBook:
-            print(key, PhoneBook[key])
-
     if Choice == 2:
         SearchName = input("Enter the full name of the contact: ")
+        print("\n===================================== Phone Book =====================================")
+        print(f'{"Name": <33} {"Age": <10} {"Address": <33} {"Number": <15}')
+        Matches = 0
         for key in PhoneBook:
             if key == SearchName:
-                print(PhoneBook[key][0])
-                print(PhoneBook[key][1])
-                print(PhoneBook[key][2])
-
+                print(f'{key.capitalize(): <33} {PhoneBook[key][0]: <10} {PhoneBook[key][1].capitalize(): <33} {PhoneBook[key][2]: <15}')
+                Matches = 1
+        if Matches == 0:
+            print(f'\n{"*** No match found ***": ^86}')
 
     if Choice == 3:
         Exit = input("Do you want to exit? y/n: ")
