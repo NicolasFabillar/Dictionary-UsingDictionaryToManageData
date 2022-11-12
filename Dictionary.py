@@ -1,9 +1,13 @@
 print(f'{"*** Programmed by ***": ^40}')
-print(f'{"*** Nicolas Fabillar ***": ^40}\n')
+print(f'{"*** Nicolas Fabillar ***": ^40}')
 
 DataList = [" ", " ", " "]
 PhoneBook = {
-
+    "Nico" : ["15", "Pampanga", "09223139401"],
+    "Duter" : ["17", "Manila", "09211111313"],
+    "Ailex" : ["16", "Zamboanga", "09211321313"],
+    "Casey" : ["19", "Pangasinan", "09211561323"],
+    "Maritez" : ["31", "Bataan", "09212233123"],
 }
 
 while True:
@@ -26,6 +30,14 @@ while True:
         # For testing.
         for key in PhoneBook:
             print(key, PhoneBook[key])
+
+    if Choice == 2:
+        SearchName = input("Enter the full name of the contact: ")
+        for key in PhoneBook:
+            if key == SearchName:
+                print(PhoneBook[key][0])
+                print(PhoneBook[key][1])
+                print(PhoneBook[key][2])
 
 
     if Choice == 3:
