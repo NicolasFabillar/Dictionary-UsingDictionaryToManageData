@@ -43,7 +43,7 @@ while True:
 
         if Choice == 2:
             SearchName = input("Enter the full name of the contact: ")
-            print("\n========================================= Phone Book =========================================")
+            print("\n======================================== All Contacts ========================================")
             print(f'{"Name": <33} {"Age": <10} {"Address": <33} {"Contact Number": <15}')
             Matches = 0
             for key in PhoneBook:
@@ -55,7 +55,7 @@ while True:
             print("==============================================================================================")
 
         if Choice == 3:
-            print("\n========================================= Phone Book =========================================")
+            print("\n======================================== All Contacts ========================================")
             print(f'{"Name": <33} {"Age": <10} {"Address": <33} {"Contact Number": <15}')
 
             for key in PhoneBook:
@@ -83,6 +83,9 @@ while True:
                         PhoneBook[key] = DataList
                         print("Contact edited.")
                         Matches = 1
+
+                    if Change == "n":
+                        print("\nCancelled.")
 
             if Matches == 0:
                 print("No match found.")
