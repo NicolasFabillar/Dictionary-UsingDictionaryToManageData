@@ -83,6 +83,7 @@ while True:
                         PhoneBook[key] = DataList
                         print("Contact edited.")
                         Matches = 1
+                        break
 
                     if Change == "n":
                         print("\nCancelled.")
